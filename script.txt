@@ -1,0 +1,87 @@
+node -v = 14
+
+mkdir concat-large-files
+npm init -y
+npm i debug@4.1
+touch index.js
+
+console.log(await Promise.resolve(0))
+
+package.json
+    type: module
+    node --harmony-top-level-await index.js
+
+kaggle
+    -> mostrar schema 1 e schema 2
+    -> download base 1 e base 2
+
+cat dataset/2018.csv| wc -l
+cat dataset/2017.csv| wc -l
+node -p '51393+98856'
+150249
+
+node -v 
+
+index.js
+    files
+    combinedStreams with file[0]
+
+    const handleStream = Transform({
+        transform: (chunk, enc, cb) => {
+            const output = chunk
+            console.log(
+                'output', output.toString()
+            )
+
+    await pipelineAsync(
+        combinedStreams,
+        handleStream,
+    )
+    show output
+
+npm i csvtojson@2.0
+    await pipelineAsync(
+        combinedStreams,
+        csvtojson(),
+        handleStream,
+    )
+
+    const handleStream = Transform({
+	transform: (chunk, enc, cb) => {
+		
+		const data = JSON.parse(chunk)
+		const output = {
+			id: data.Respondent,
+			country: data.Country,
+		}
+		log(`id: ${output.id}`)
+		return cb(null, JSON.stringify(output));
+	},
+});
+
+npm i json-to-csv-stream@1.1
+    const finalStreamFile = createWriteStream(output);
+    await pipelineAsync(
+        combinedStreams,
+        csvtojson(),
+        handleStream,
+        jsontocsv(),
+        finalStreamFile
+    )
+    
+    rm DEBUG=* do package.json
+
+npm i stream-concat@0.3
+    const combinedStreams = new StreamConcat(streams);
+
+cat final.csv| wc -l
+mostrar final.csv
+
+cp 2018.csv 2020.csv 
+cp 2018.csv 2021.csv 
+cp 2018.csv 2022.csv 
+cp 2018.csv 2023.csv 
+nt
+node -p '51393+(98856*6)'
+644529
+
